@@ -1,0 +1,35 @@
+{
+  "bundles": [
+    {
+      "name": "default",
+      "assets": []
+    },
+    {
+      "name": "ace-of-shadows",
+      "assets": [
+        {
+          "alias": [
+            "ace-of-shadows/atlas"
+          ],
+          "src": [
+            "ace-of-shadows/atlas.json"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "magic-words",
+      "assets": [
+        {
+          "alias": [
+            "magic-words/font.ttf",
+            "magic-words/font"
+          ],
+          "src": [
+            "magic-words/font.fnt"
+          ]
+        }
+      ]
+    }
+  ]
+}
