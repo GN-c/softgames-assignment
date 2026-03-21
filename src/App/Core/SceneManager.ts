@@ -82,6 +82,7 @@ export class SceneManager<S extends string> extends EventEmitter<"abc" | "BD"> {
   }
 
   resize(width: number, height: number) {
-    this.activeScene?.onResize?.(width, height);
+    for (const scene of Object.values<Scene>(this.scenes))
+      if (scene.created) scene.onResize?.(width, height);
   }
 }
