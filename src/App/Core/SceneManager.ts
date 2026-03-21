@@ -57,6 +57,14 @@ export class SceneManager<S extends string> extends EventEmitter<"abc" | "BD"> {
     this.app.stage.addChild(scene);
 
     /**
+     * Created if needed
+     */
+    if (!scene.created) {
+      scene.onCreate?.();
+      scene.created = true;
+    }
+
+    /**
      * Run OnStart Handler
      */
     scene.onStart?.();

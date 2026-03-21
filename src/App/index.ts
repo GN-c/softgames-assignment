@@ -59,6 +59,7 @@ export class App extends Application {
      * Create FPS indicator
      */
     this.fpsIndicator = new FPSIndicator();
+    this.fpsIndicator.zIndex = 10;
     this.stage.addChild(this.fpsIndicator);
 
     this.sceneSwitcher = new SceneSwitcher(
@@ -69,6 +70,7 @@ export class App extends Application {
       this.sceneManager.start(sceneName);
       this.sceneSwitcher!.setActiveScene(sceneName);
     });
+    this.sceneSwitcher.zIndex = 10;
     this.stage.addChild(this.sceneSwitcher);
 
     // Start with first scene
