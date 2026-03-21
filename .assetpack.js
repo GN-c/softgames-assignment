@@ -22,7 +22,6 @@ export default {
           " :.!'?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
         // generated font is having some artifacts in narrow areas, increase fontSize to fix issue
         fontSize: 80,
-        // textureSize: [256, 128],
         vector: true,
         texturePadding: 1,
         border: 1,

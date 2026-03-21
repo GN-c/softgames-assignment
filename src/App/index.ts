@@ -1,11 +1,19 @@
+import * as PIXI from "pixi.js";
 import { Application, Assets, BitmapText, Ticker } from "pixi.js";
+import { gsap } from "gsap";
+import { PixiPlugin } from "gsap/PixiPlugin";
 import { SceneManager } from "./Core/SceneManager";
+
 import { AceOfShadows } from "./Scenes/AceOfShadows";
 import { MagicWords } from "./Scenes/MagicWords";
 import { PhoenixFlame } from "./Scenes/PhoenixFlame";
 
 import manifest from "../manifest.json";
 import { SceneSwitcher } from "./UI/SceneSwitcher";
+import { FPSIndicator } from "./UI/FPSIndicator";
+
+gsap.registerPlugin(PixiPlugin);
+PixiPlugin.registerPIXI(PIXI);
 
 export class App extends Application {
   // Create Scene Manager
@@ -14,9 +22,9 @@ export class App extends Application {
     MagicWords,
     PhoenixFlame,
   });
-  fpsText!: BitmapText;
+  fpsIndicator?: FPSIndicator;
 
-  sceneSwitcher!: SceneSwitcher<
+  sceneSwitcher?: SceneSwitcher<
     ReturnType<this["sceneManager"]["getSceneNames"]>[number]
   >;
 
@@ -50,24 +58,17 @@ export class App extends Application {
     /**
      * Create FPS indicator
      */
-    this.fpsText = new BitmapText({
-      text: "FPS: 15",
-      y: 5,
-      x: 20,
-      style: {
-        fontFamily: "font",
-        fill: "black",
-        fontSize: 30,
-        align: "left",
-      },
-    });
-    this.stage.addChild(this.fpsText);
+    this.fpsIndicator = new FPSIndicator();
+    this.stage.addChild(this.fpsIndicator);
 
     this.sceneSwitcher = new SceneSwitcher(
       this,
       this.sceneManager.getSceneNames(),
       "AceOfShadows",
-    );
+    ).on("sceneselected", (sceneName) => {
+      this.sceneManager.start(sceneName);
+      this.sceneSwitcher!.setActiveScene(sceneName);
+    });
     this.stage.addChild(this.sceneSwitcher);
 
     // Start with first scene
@@ -90,11 +91,12 @@ export class App extends Application {
   }
 
   private onResize(width: number, height: number) {
+    this.sceneSwitcher?.handleResize();
     this.sceneManager.resize(width, height);
   }
 
   private onTick(ticker: Ticker) {
     this.sceneManager.tick(ticker);
-    if (this.fpsText) this.fpsText.text = `FPS: ${ticker.FPS.toFixed(0)}`;
+    this.fpsIndicator?.setFPS(ticker.FPS);
   }
 }
