@@ -5,6 +5,10 @@ import { pipeline } from "stream/promises";
 import { createWriteStream } from "fs";
 
 /**
+ * Use This script through npm run download-cards to download random cards for ace of shadows
+ */
+
+/**
  * Receive Count(number of images to download) and output directory as args
  */
 const count = parseInt(process.argv[2], 10);

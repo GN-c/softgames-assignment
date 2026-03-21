@@ -17,6 +17,11 @@ export interface Scene extends Container {
   onTick?(ticker: Ticker): void;
 
   /**
+   * Called when the application is resized
+   */
+  onResize?(width: number, height: number): void;
+
+  /**
    * Called when the scene is deactivated or replaced by another scene
    */
   onStop?(): void;

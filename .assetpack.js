@@ -19,8 +19,13 @@ export default {
     msdfFont({
       font: {
         charset:
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-        "smart-size": true,
+          " :.!'?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        // generated font is having some artifacts in narrow areas, increase fontSize to fix issue
+        fontSize: 80,
+        // textureSize: [256, 128],
+        vector: true,
+        texturePadding: 1,
+        border: 1,
       },
     }),
     pixiManifest({

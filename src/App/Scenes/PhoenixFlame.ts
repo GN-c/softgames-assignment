@@ -1,5 +1,5 @@
 import { Text, Ticker } from "pixi.js";
-import { Scene } from "../Utils/Scene";
+import { Scene } from "../Core/Scene";
 
 /**
  * Task 3 - Phoenix Flame Scene

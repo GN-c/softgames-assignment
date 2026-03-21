@@ -2,7 +2,17 @@
   "bundles": [
     {
       "name": "default",
-      "assets": []
+      "assets": [
+        {
+          "alias": [
+            "font.ttf",
+            "font"
+          ],
+          "src": [
+            "font.fnt"
+          ]
+        }
+      ]
     },
     {
       "name": "ace-of-shadows",
@@ -19,17 +29,7 @@
     },
     {
       "name": "magic-words",
-      "assets": [
-        {
-          "alias": [
-            "magic-words/font.ttf",
-            "magic-words/font"
-          ],
-          "src": [
-            "magic-words/font.fnt"
-          ]
-        }
-      ]
+      "assets": []
     }
   ]
 }

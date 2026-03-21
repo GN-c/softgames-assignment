@@ -1,5 +1,5 @@
 import { Assets, Text, Ticker } from "pixi.js";
-import { Scene } from "../../Utils/Scene";
+import { Scene } from "../../Core/Scene";
 
 interface Data {
   dialogue: { name: string; text: string }[];
@@ -12,9 +12,7 @@ interface Data {
  */
 export class MagicWords extends Scene {
   async onLoad() {
-    const data = await Assets.loadBundle("MagicWords");
-
-    console.log({ data });
+    await Assets.loadBundle("magic-words");
   }
 
   onStart(): void {

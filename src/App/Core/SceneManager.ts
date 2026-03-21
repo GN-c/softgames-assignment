@@ -65,7 +65,15 @@ export class SceneManager<S extends string> extends EventEmitter<"abc" | "BD"> {
     this.activeScene = scene;
   }
 
+  getSceneNames() {
+    return Object.keys(this.scenes) as S[];
+  }
+
   tick(ticker: Ticker) {
     this.activeScene?.onTick?.(ticker);
+  }
+
+  resize(width: number, height: number) {
+    this.activeScene?.onResize?.(width, height);
   }
 }
