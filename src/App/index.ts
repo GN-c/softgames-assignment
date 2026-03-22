@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { Application, Assets, BitmapText, Ticker } from "pixi.js";
+import { Application, Assets, Ticker } from "pixi.js";
 import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { SceneManager } from "./Core/SceneManager";
@@ -43,6 +43,12 @@ export class App extends Application {
 
     // add to DOM
     this.parent.appendChild(this.canvas);
+
+    // Toggle fullscreen on click
+    this.canvas.addEventListener("click", () => {
+      if (!document.fullscreenElement)
+        document.documentElement.requestFullscreen();
+    });
 
     // Attach Global onTick listener
     this.ticker.add(this.onTick, this);
