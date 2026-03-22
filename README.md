@@ -2,6 +2,8 @@
 
 A PixiJS v8 demo showcasing three interactive scenes for SoftGames Developer Assignment
 
+[Open](https://softgames-assignment-alpha.vercel.app/)
+
 ## Scenes
 
 - Ace of Shadows
