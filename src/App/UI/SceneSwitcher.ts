@@ -1,7 +1,7 @@
 import { Application, BitmapText, Container, Graphics } from "pixi.js";
 import { gsap } from "gsap";
 import { setBitmapTextPivot } from "../Utils/BitmapTextUtils";
-import { camelCaseToSpaces } from "../Utils/CamelCaseToSpaces";
+import { camelCaseToSpaces } from "../Utils/text";
 
 export interface SceneSwitcherConfig {
   buttonSize?: number;
