@@ -1,0 +1,62 @@
+{
+  "frames": {
+    "fire-2": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 216,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 19,
+        "w": 216,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      }
+    },
+    "fire-1": {
+      "frame": {
+        "x": 220,
+        "y": 2,
+        "w": 238,
+        "h": 224
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 18,
+        "w": 238,
+        "h": 224
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      }
+    }
+  },
+  "animations": {
+    "fire": [
+      "fire-1",
+      "fire-2"
+    ]
+  },
+  "meta": {
+    "app": "http://github.com/pixijs/assetpack",
+    "version": "1.0",
+    "image": "atlas.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 460,
+      "h": 228
+    },
+    "scale": 1,
+    "related_multi_packs": []
+  }
+}

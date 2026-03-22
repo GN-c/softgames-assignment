@@ -36,11 +36,10 @@
       "assets": [
         {
           "alias": [
-            "phoenix-flame/blob.png",
-            "phoenix-flame/blob"
+            "phoenix-flame/atlas"
           ],
           "src": [
-            "phoenix-flame/blob.png"
+            "phoenix-flame/atlas.json"
           ]
         }
       ]

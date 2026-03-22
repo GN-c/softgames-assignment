@@ -10,7 +10,8 @@ export class PhoenixFlame extends Scene {
   }
 
   onCreate(): void {
-    this.fire = new Fire(this.app.renderer);
+    this.fire = new Fire(10);
+    this.fire.scale.set(2, 2);
     this.addChild(this.fire);
 
     this.x = this.app.screen.width / 2;
