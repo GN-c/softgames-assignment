@@ -45,10 +45,10 @@ export class App extends Application {
     this.parent.appendChild(this.canvas);
 
     // Toggle fullscreen on click
-    // this.canvas.addEventListener("click", () => {
-    //   if (!document.fullscreenElement)
-    //     document.documentElement.requestFullscreen();
-    // });
+    this.canvas.addEventListener("click", () => {
+      if (!document.fullscreenElement)
+        document.documentElement.requestFullscreen();
+    });
 
     // Attach Global onTick listener
     this.ticker.add(this.onTick, this);
