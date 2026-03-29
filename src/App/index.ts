@@ -45,7 +45,7 @@ export class App extends Application {
     this.parent.appendChild(this.canvas);
 
     // Toggle fullscreen on click
-    this.canvas.addEventListener("click", () => {
+    this.canvas.addEventListener("dblclick", () => {
       if (!document.fullscreenElement)
         document.documentElement.requestFullscreen();
     });

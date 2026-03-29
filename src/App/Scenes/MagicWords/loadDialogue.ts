@@ -41,7 +41,7 @@ export async function LoadDialogue(): Promise<DialogueData[]> {
           src: emoji.url,
           alias: `Emoji/${emoji.name}`,
           parser: "texture",
-        }),
+        }).catch(console.warn),
       ),
     ),
     /**
@@ -53,7 +53,7 @@ export async function LoadDialogue(): Promise<DialogueData[]> {
           src: avatar.url,
           alias: `Avatar/${avatar.name}`,
           parser: "texture",
-        }),
+        }).catch(console.warn),
       ),
     ),
   ]);
