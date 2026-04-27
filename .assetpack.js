@@ -1,11 +1,13 @@
 import { pixiManifest } from "@assetpack/core/manifest";
 import { msdfFont } from "@assetpack/core/webfont";
 import { texturePacker } from "@assetpack/core/texture-packer";
+import { json } from "@assetpack/core/json";
 
 export default {
   entry: "./raw-assets",
   output: "./public/assets",
   pipes: [
+    json(),
     texturePacker({
       texturePacker: {
         padding: 2,

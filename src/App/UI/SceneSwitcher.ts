@@ -17,6 +17,8 @@ export class SceneSwitcher<S extends string> extends Container {
   config: Required<SceneSwitcherConfig>;
   box: Graphics;
 
+  focusedScene: string;
+
   constructor(
     private readonly app: Application,
     private sceneNames: S[],
@@ -24,6 +26,8 @@ export class SceneSwitcher<S extends string> extends Container {
     config: SceneSwitcherConfig = {},
   ) {
     super();
+
+    this.focusedScene = activeScene;
 
     /** Save config with default values */
     this.config = {
@@ -135,6 +139,9 @@ export class SceneSwitcher<S extends string> extends Container {
   }
 
   private animateActiveScene(sceneName: S) {
+    if (this.focusedScene == sceneName) return;
+    this.focusedScene = sceneName;
+
     /**
      * Fade down -> change text -> fade up
      */

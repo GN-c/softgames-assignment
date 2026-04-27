@@ -29,7 +29,17 @@
     },
     {
       "name": "magic-words",
-      "assets": []
+      "assets": [
+        {
+          "alias": [
+            "magic-words/dialogue.json",
+            "magic-words/dialogue"
+          ],
+          "src": [
+            "magic-words/dialogue.json"
+          ]
+        }
+      ]
     },
     {
       "name": "phoenix-flame",

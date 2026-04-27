@@ -26,10 +26,9 @@ export async function LoadDialogue(): Promise<DialogueData[]> {
   /**
    * Load JSON Data
    */
-  const { emojies, avatars, dialogue } = await Assets.load<Data>({
-    src: "https://private-624120-softgamesassignment.apiary-mock.com/v2/magicwords",
-    parser: "json",
-  });
+  const { emojies, avatars, dialogue } = await Assets.load<Data>(
+    "magic-words/dialogue",
+  );
 
   await Promise.all([
     /**
